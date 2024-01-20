@@ -45,7 +45,7 @@ export function DrawerAvaliate({ bookId, isOpen, onClose }: DrawerAvaliatePropsT
   if (!isOpen || !book) return null
 
   return (
-    <div date-testid="drawer-avaliate" className="fixed bg-black/60 h-screen w-screen flex justify-end top-0 left-0">
+    <div id="drawer-avaliate" date-testid="drawer-avaliate" className="fixed bg-black/60 h-screen w-screen flex justify-end top-0 left-0">
       <div onClick={onClose} className="flex-1 flex" />
       <div className="overflow-auto bg-gray-800 px-12 py-[4rem] w-1/2 w-max-[41.25rem]">
         <AvaliateBook

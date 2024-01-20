@@ -11,7 +11,7 @@ type PostType = FeedPresenter & {
 export function Post(
   { bookAuthorName, bookCoverUrl, bookId, bookName, id, makedAt, rate, userCoverUrl, userId, userName, description, dontShowHeaderOfUser = false }: PostType) {
   return (
-    <div className="flex-1 flex flex-col gap-3 bg-gray-700 rounded-md p-5">
+    <div id="post" className="flex-1 flex flex-col gap-3 bg-gray-700 rounded-md p-5">
       { ! dontShowHeaderOfUser && <div className="flex-1 flex items-start justify-between">
         <div className="flex items-center justify-start gap-4">
           <Image
