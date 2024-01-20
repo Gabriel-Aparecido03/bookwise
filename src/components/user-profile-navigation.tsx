@@ -8,7 +8,7 @@ interface UserProfileNavigationPropsType {
 
 export function UserProfileNavigation({ isSelected = false }:UserProfileNavigationPropsType) {
   const user = useSession()
-  if(user.status === "authenticated") return (
+  if(user?.status === "authenticated") return (
     <ButtonNavigation
       icon={<LuUser />}
       text='Profile'

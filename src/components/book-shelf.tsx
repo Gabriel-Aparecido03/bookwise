@@ -16,12 +16,12 @@ export function Bookshelf() {
     if (res.status === 200) setBooks(res.data.popularBooks)
   }
 
-  /* useEffect(() => {
+  useEffect(() => {
     fetchingPopularBooks()
-  },[]) */
+  },[])
 
   return (
-    <div className="pl-5">
+    <div data-testid="book-shelf" className="pl-5">
       <header className="flex items-center justify-between mb-4">
         <p className="text-sm">Popular books</p>
         <Link className=" text-purple-100 flex items-center gap-3 font-bold" href="/app/explorer">See all <IoChevronForwardOutline /> </Link>

@@ -17,9 +17,9 @@ export function Feed() {
     }
   }
 
-  /* useEffect(() => {
+  useEffect(() => {
     fetchingRates()
-  }, []) */
+  }, [])
 
   return (
     <div className="flex flex-col gap-5 mt-5 w-[700px]">

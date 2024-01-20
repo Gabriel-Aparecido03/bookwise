@@ -8,7 +8,7 @@ export function TagsCollections() {
   return (
     <div className="flex items-center justify-start gap-3 flex-wrap">
       <Tag id={null} isSelected={selectedFilter === null} name={'All'} key={''} />
-      {filters.map( filter => <Tag id={filter.id} isSelected={selectedFilter?.id === filter.id} name={filter.name} key={filter.id} />)}
+      {filters?.map( filter => <Tag id={filter.id} isSelected={selectedFilter?.id === filter.id} name={filter.name} key={filter.id} />)}
     </div>
   )
 }

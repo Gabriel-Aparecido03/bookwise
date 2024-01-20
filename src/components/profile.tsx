@@ -11,7 +11,7 @@ export function Profile() {
   const session = useSession()
   const [ openModal , setOpenModal ] = useState(false)
 
-  if (session.status === "unauthenticated") return (
+  if (session?.status === "unauthenticated" || !session) return (
     <>
       <footer>
         <button className="bg-transparent flex items-center gap-3">
@@ -30,8 +30,8 @@ export function Profile() {
         }}
         className="bg-transparent flex items-center gap-3"
       >
-        <Image src={session.data?.user.image ?? ''} alt="" height={32} width={32} className="h-[2rem] w-[2rem] rounded-full bg-white" />
-        <span className="font-bold text-xs text-gray-400 hover:text-gray-100">{session?.data?.user.name?.slice(0, 12).concat('...')}</span>
+        <Image src={session.data?.user?.image ?? ''} alt="" height={32} width={32} className="h-[2rem] w-[2rem] rounded-full bg-white" />
+        <span className="font-bold text-xs text-gray-400 hover:text-gray-100">{session?.data?.user?.name?.slice(0, 12).concat('...')}</span>
         <RxExit className="w-6 h-6 text-red-400" />
       </button>
     </footer>

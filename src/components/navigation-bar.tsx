@@ -8,12 +8,13 @@ import { FaChartLine } from 'react-icons/fa';
 import { PiBinocularsBold } from 'react-icons/pi';
 import { ButtonNavigation } from './button-navigation';
 import { Profile } from './profile';
+import { useSession } from 'next-auth/react';
 
 export function NavigationBar() {
 
   const route = usePathname()
-  const selectedSection = route.split('/')
-
+  const selectedSection = route ? route.split('/') : []
+  const session = useSession()
   return (
     <aside className="w-[230px] h-[calc(100vh-70px)] rounded-lg p-8 bg-gray-700 flex flex-col justify-between items-center">
       <header className='flex flex-col gap-16'>
@@ -31,7 +32,7 @@ export function NavigationBar() {
             to='/app/explorer'
             isSelect={selectedSection[2] === 'explorer'}
           />
-          <UserProfileNavigation isSelected={selectedSection[2] === 'profile'} />
+          { session && <UserProfileNavigation isSelected={selectedSection[2] === 'profile'} />}
         </div>
       </header>
       <Profile />

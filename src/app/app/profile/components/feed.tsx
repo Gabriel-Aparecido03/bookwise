@@ -8,16 +8,16 @@ import { useState, useEffect } from "react";
 
 export function Feed() {
   const [rates , setRates ] = useState<BookRateByUserPresenter[]>([])
-  const session = useSession()
+  const { data } = useSession()
 
   async function fetchingRates() {
-    const res = await api.get(`/user/${session?.data?.user.email}/ratings`)
+    const res = await api.get(`/user/${data?.user?.email}/ratings`)
     if(res.status === 200 ) setRates(res.data.rates)
   }
 
-  /* useEffect(()=>{
+  useEffect(()=>{
     fetchingRates()
-  },[]) */
+  },[])
 
   return (
     <div className="flex flex-col flex-1 gap-5 mt-5">

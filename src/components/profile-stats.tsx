@@ -17,13 +17,13 @@ export function ProfileStats() {
   const session = useSession()
 
   async function fetchingUserInfos() {
-    const res = await api.get(`/user/${session?.data?.user.email}/infos`)
+    const res = await api.get(`/user/${session?.data?.user?.email}/infos`)
     if (res.status === 200) setUserInfos(res.data.userInfo)
   }
 
-  /* useEffect(() => {
+  useEffect(() => {
     fetchingUserInfos()
-  }, []) */
+  }, [])
 
   if(!userInfos) return null
 

@@ -1,11 +1,11 @@
-import { auth } from "@/app/lib/next-auth/auth";
+'use client'
+
 import { SessionProvider } from "next-auth/react";
 import { ReactNode } from "react";
 
-export default async function AuthContextProvider({ children }: { children: ReactNode }) {
-  const session = await auth();
+export default function AuthContextProvider({ children }: { children: ReactNode }) {
   return (
-    <SessionProvider session={session}>
+    <SessionProvider>
       {children}
     </SessionProvider>
   );

@@ -19,7 +19,7 @@ export function ThumbnailBook({ author, coverUrl, id, name, rate }: ThumbnailBoo
   return (
     <>
       <DrawerAvaliate bookId={id} isOpen={openDrawer} onClose={() => { setOpenDrawer(false) }} />
-      <div onClick={() =>{ setOpenDrawer(true)} } className="rounded-lg w-[20rem] h-[8rem] bg-gray-700 p-4 flex cursor-pointer items-stretch justify-start gap-5 border-2 border-solid border-transparent hover:border-gray-600 transition-all duration-75">
+      <div  onClick={() =>{ setOpenDrawer(true)} } className="rounded-lg w-[20rem] h-[8rem] bg-gray-700 p-4 flex cursor-pointer items-stretch justify-start gap-5 border-2 border-solid border-transparent hover:border-gray-600 transition-all duration-75">
         <Image alt="" height={94} width={36} src={src} className="w-[4rem] h-[5.875rem]" />
         <div className="flex flex-col justify-between flex-1 items-start gap-1">
           <div className="flex flex-col gap-1 ">
